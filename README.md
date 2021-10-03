@@ -26,7 +26,9 @@ Comment ça fonctionne
 -----
 Scheduler :
 - créer un compte pour avoir accès à l'API Open Weather Map : demander une clef API 
-- remplacer dans le fichier app/services/weather.service.js => line 19 => '&appid=VOTRE_API_ID&units=metric&lang=fr'par VOTRE_API_ID (exemple type : ae6789esfdf5678)
+- remplacer dans le fichier app/services/weather.service.js => line 19 => 
+'https://api.openweathermap.org/data/2.5/weather?lat='(LATITUDE_INSERT)''&lon='(LONGITUDE_INSERT)'&appid=(CODE_API_INSERT)&inits=metric&lang=fr'
+par votre api key (exemple type : ae6789esfdf5678)
 
 -----
 MS NodeJS : installation des packages => npm install
