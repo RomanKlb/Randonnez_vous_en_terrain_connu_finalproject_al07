@@ -1,0 +1,32 @@
+.submit-form {
+  max-width: 500px;
+  margin: auto;
+  background-color: rgb(187, 219, 240);
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+  box-shadow: 100px 100px 100px rgb(0 0 0 / 60%);
+  /* border-radius: 3rem; */
+}
+
+h2 {
+  font-weight: bold; 
+}
+
+h4 {
+  font-weight: bold; 
+}
+
+label {
+ font-weight: bold; 
+ color: black;
+}
+
+.btn, input  {
+    color: black;
+}
+
+hr {
+    border-top : 2px solid white;
+}

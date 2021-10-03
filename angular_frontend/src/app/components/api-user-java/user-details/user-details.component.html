@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="submit-form">
+            <form *ngIf="user.email" class="edit-form" (ngSubmit)="f.form.valid && updateUser()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <h4 class="text-center">Modifier votre profil</h4>
+                    <br />
+                    <hr />
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" [(ngModel)]="editUser.email" required
+                        #email="ngModel" name="email" />
+                    <small class="form-text text-muted" role="alert" *ngIf="email.errors && f.submitted">
+                        Un email de type "xxxx@yyyy.zz" est requis !
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="mot de passe" [(ngModel)]="editUser.password" required
+                        minlength="6" #password="ngModel" name="password" />
+                    <small class="form-text text-muted" role="alert" *ngIf="password.errors && f.submitted">
+                        Le mot de passe doit avoir au minimum 6 caractères !
+                    </small>
+                </div>
+                <br />
+                <hr />
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input disabled type="text" class="form-control" id="name" [(ngModel)]="editUser.name" required
+                        #name="ngModel" name="name" />
+                </div>
+                <div class="form-group">
+                    <label for="surname">Prénom</label>
+                    <input disabled type="text" class="form-control" id="surname" [(ngModel)]="editUser.surname"
+                        required #surname="ngModel" name="surname" />
+                </div>
+                <br />
+                <div class="row" *ngIf="submitted">
+                    <div class="col-md-12 text-center">
+                        <h4>{{ message }}</h4>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 text-center">
+                        <button class="badge btn-success" type="submit">Modifier</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row" *ngIf="!user.email">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 text-center">
+                        <h4>Vous ne pouvez pas accéder à cette utilisateur</h4>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+<br />
+<br />
+<br />
+<legend class="text-center">Liste des administrateurs de l'application</legend>
+<div class="text-center">
+    <button class="badge badge-secondary" (click)="open()">
+        Ajouter un Administrateur
+    </button>
+</div>
+
+<br />
+<hr />
+<br />
+
+<div class="container">
+    <div class="list row">
+        <div class="col-md-6">
+            <!-- <h4></h4> -->
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let user of users; let i = index" [class.active]="i == currentIndex"
+                    (click)="setActiveUser(user, i)">
+                    {{ user.email }}
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <div *ngIf="!currentUser">
+                <br/>
+                <br/>
+                <p>Cliquer sur un administrateur de cette liste ...</p>
+            </div>
+            <div *ngIf="currentUser">
+                <!-- <h4>Administrateur</h4> -->
+                <div>
+                    <label><strong>Email :</strong></label> {{ currentUser.email }}
+                </div>
+                <div>
+                    <label><strong>Nom :</strong></label>
+                    {{ currentUser.name }}
+                </div>
+                <div>
+                    <label><strong>Prénom :</strong></label>
+                    {{ currentUser.surname }}
+                </div>
+                <!-- <div>
+                    <a class="badge badge-warning" routerLink="/users/{{ currentUser.id }}">
+                        Modifier un Administrateur
+                    </a>
+                </div> -->
+
+                <div>
+                    <a class="badge badge-danger" (click)="removeOneActiveUser()">
+                        Supprimer un Administrateur
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

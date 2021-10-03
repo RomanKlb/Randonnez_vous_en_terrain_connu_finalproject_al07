@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, Verdana, Geneva, Tahoma, sans-serif;
+    /* background: -webkit-linear-gradient(#91cdf5, #C9DCB9); */
+    /*Pour Chrome 25, Safari 6 */
+    /* background: -o-linear-gradient(#91cdf5, #C9DCB9); */
+    /*Pour Opera (11.1 à 12.0) */
+    /* background: -moz-linear-gradient(#91cdf5, #C9DCB9); */
+    /* Pour Firefox (3.6 à 15) */
+    /* background: linear-gradient(#91cdf5, #C9DCB9); */
+    /*Autres navigateurs */
+    /* background-color: #91cdf5; */
+}

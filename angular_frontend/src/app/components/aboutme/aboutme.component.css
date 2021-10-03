@@ -1,0 +1,16 @@
+.presentationclass {
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgb(187, 219, 240);
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    box-shadow: 100px 100px 100px rgb(0 0 0 / 60%);
+}
+
+.justify {
+    text-align: justify; 
+    text-align-last: left;
+    text-justify: inter-word;
+}

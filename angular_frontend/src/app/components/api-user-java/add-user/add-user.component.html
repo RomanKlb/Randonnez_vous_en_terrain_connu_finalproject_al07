@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="submit-form">
+      <form *ngIf="!submitted" (ngSubmit)="f.form.valid && saveUserBasic()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <h4 class="text-center">Inscription</h4>
+          <br />
+          <hr />
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" [(ngModel)]="user.email" required #email="ngModel"
+            name="email" />
+          <small class="form-text text-muted" role="alert" *ngIf="email.errors && f.submitted">
+            Un email de type "xxxx@yyyy.zz" est requis !
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="user.password" required minlength="6"
+            #password="ngModel" name="password" />
+          <small class="form-text text-muted" role="alert" *ngIf="password.errors && f.submitted">
+            Le mot de passe doit avoir au minimum 6 caractères !
+          </small>
+        </div>
+        <br />
+        <hr />
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="user.name" required #name="ngModel"
+            name="name" />
+          <small class="form-text text-muted" role="alert" *ngIf="name.errors && f.submitted">
+            Le nom est requis !
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="surname">Prénom</label>
+          <input type="text" class="form-control" id="surname" [(ngModel)]="user.surname" required #surname="ngModel"
+            name="surname" />
+          <small class="form-text text-muted" role="alert" *ngIf="surname.errors && f.submitted">
+            Le prénom est requis !
+          </small>
+        </div>
+        <br />
+        <br />
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4 text-center">
+            <button class="badge btn-success" type="submit">Créer</button>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </form>
+      <div class="row" *ngIf="submitted">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="text-center">
+            <h4>Votre utilisateur a bien été créé !</h4>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3 text-center">
+            <div class="btn-group mr-3">
+                <button type="button" class="btn btn-outline-primary "
+                    (click)='retrieveInterestPoint()'>Thématique</button>
+                <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                    <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+                    <div class="dropdown-menu" ngbDropdownMenu>
+                        <button ngbDropdownItem (click)="searchByThematic('CASCADE')">Cascade</button>
+                        <button ngbDropdownItem (click)="searchByThematic('LAC')">Lac</button>
+                        <button ngbDropdownItem (click)="searchByThematic('PANORAMA')">Panorama</button>
+                        <button ngbDropdownItem (click)="searchByThematic('PATRIMOINE')">Patrimoine</button>
+                        <button ngbDropdownItem (click)="searchByThematic('SPORT')">Sport</button>
+                        <button ngbDropdownItem (click)="searchByThematic('STATION')">Station</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 text-center">
+            <div class="btn-group mr-3">
+                <button type="button" class="btn btn-outline-primary "
+                    (click)='retrieveInterestPoint()'>Activité</button>
+                <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                    <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+                    <div class="dropdown-menu" ngbDropdownMenu>
+                        <button ngbDropdownItem (click)="searchByActivity('ALPINISME')">Alpinisme</button>
+                        <button ngbDropdownItem (click)="searchByActivity('BAIGNADE')">Baignade</button>
+                        <button ngbDropdownItem (click)="searchByActivity('CANOE_KAYAK')">Canöe-Kayak</button>
+                        <button ngbDropdownItem (click)="searchByActivity('ESCALADE')">Escalade</button>
+                        <button ngbDropdownItem (click)="searchByActivity('LUGE')">Luge</button>
+                        <button ngbDropdownItem (click)="searchByActivity('RANDONNEE')">Randonnée</button>
+                        <button ngbDropdownItem (click)="searchByActivity('SKI')">Ski</button>
+                        <button ngbDropdownItem (click)="searchByActivity('SNOWBOARD')">Snowboard</button>
+                        <button ngbDropdownItem (click)="searchByActivity('SUP_PADDLE')">Stand-Up Paddle</button>
+                        <button ngbDropdownItem (click)="searchByActivity('TOURISME')">Tourisme</button>
+                        <button ngbDropdownItem (click)="searchByActivity('VISITE')">Visite</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+<br />
+<br />
+<div class=container-fluid>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let ip of interestPoints">
+            <div class="card default-color-dark">
+                <div class="view">
+                    <img src="{{'data:image/jpg;base64,' + ip.file.data}}" height="200" class="card-img-top"
+                        alt="photo">
+                    <a href="#">
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <div class="card-body text-center">
+                    <h4 class="card-title white-text titreCards">{{ ip.nomDuLieu }}</h4>
+                    <div class="row">
+                        <div class="col-4">
+                            <p class="card-text white-text">
+                                Thématiques</p>
+                            <ul type="button" class="btn btn-outline-secondary mr-2" placement="bottom"
+                                *ngFor="let thematic of ip.listThematic" ngbTooltip="{{thematic.nomThematic}}">
+                                <img src="./assets/img/logo/{{thematic.nomThematic}}.png" width="40%"/>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <p class="card-text white-text">
+                                Activités</p>
+                            <ul type="button" class="btn btn-outline-secondary mr-2" placement="bottom"
+                                *ngFor="let activity of ip.listActivity" ngbTooltip="{{activity.activity}}">
+                                <img src="./assets/img/logo/{{activity.activity}}.png" width="40%"/>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <p class="card-text white-text">
+                                Equipements</p>
+                            <ul type="button" class="btn btn-outline-secondary mr-2" placement="bottom"
+                                *ngFor="let equipement of ip.listEquipement" ngbTooltip="{{equipement.equipement}}">
+                                <img src="./assets/img/logo/{{equipement.equipement}}.png" width="40%"/>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <a class="badge badge-outline-primary btn-sm" (click)='open(ip.tempsActivite, ip.text)'>Information
+                        supplémentaire</a>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+</div>

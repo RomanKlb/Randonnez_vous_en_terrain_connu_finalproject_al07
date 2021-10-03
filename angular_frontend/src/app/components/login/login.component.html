@@ -1,0 +1,78 @@
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div><img src="./assets/img/rdnvetc.png " width="100%" /></div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form *ngIf=" !isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <fieldset class="form-group">
+                    <label for="email" style="font-weight: bold;">Email</label>
+                    <input type="text" class="form-control" name="email" [(ngModel)]="login.email" required
+                        #email="ngModel" ngbTooltip="Pour la démonstration : visitor@test.com - visitor" [autoClose]="true" triggers="manual" #t="ngbTooltip" (click)="t.open()" />
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                    <small class="form-text text-muted alert-danger" role="alert" *ngIf="email.errors && f.submitted">
+                        L'email est requis !
+                    </small>
+
+                    <!-- 
+                <fieldset class="form-group"> -->
+                    <label for="password" style="font-weight: bold;">Mot de passe</label>
+                    <input type="password" class="form-control" name="password" [(ngModel)]="login.password" required
+                        minlength="6" #password="ngModel" (click)="t.open()" />
+                    <small class="form-text text-muted alert-danger" role="alert"
+                        *ngIf="password.errors && f.submitted">
+                        <div *ngIf="password.errors.required">Mot de passe requis !</div>
+                        <div *ngIf="password.errors.minlength">
+                            Le mot de passe doit contenir 6 caractères minimum
+                        </div>
+                    </small>
+
+                    <br />
+                    <div class="form-group" style="margin-top: -15px;">
+                        <small class=" form-text text-muted alert-danger" style="margin-top: -10px;" role="alert" *ngIf="f.submitted && isLoginFailed">
+                            Connexion refusée : {{ errorMessage }}
+                        </small>
+                        <button class="btn btn-primary btn-block" placement="top" ngbTooltip="/!\ Le réveil du backend depuis Heroku prend environ 30 sec en version gratuite /!\" >
+                            Se connecter
+                        </button>
+                    </div>
+                    
+                </fieldset>
+            </form>
+            <div *ngIf="!isLoggedIn" style="margin-top: -20px;">
+                <button class="btn btn-secondary btn-block" (click)='open()'>
+                    Créer un compte
+                </button>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" *ngIf="isLoggedIn">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="alert alert-info text-center">
+                Bienvenue {{user.surname}} {{user.name}} !
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <div class="row" *ngIf="isLoggedIn">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="">
+                <button class="btn btn-danger btn-block" (click)="onLogout()">Ce n'est pas vous ?</button>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

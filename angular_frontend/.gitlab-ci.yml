@@ -1,0 +1,35 @@
+image : node:latest
+
+stages:
+  - staging
+  - deploy
+
+staging:
+  stage: staging
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm install -g @angular/cli@11.2.14
+    - npm install
+    - ng build --configuration=staging 
+    - mkdir public/staging
+    - mv dist/Angular11ProjetFinal/* public/staging
+  artifacts:
+    paths:
+      - public
+
+pages:
+  stage: deploy
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm install -g @angular/cli@11.2.14
+    - npm install
+    - ng build --configuration=production
+    - mv dist/Angular11ProjetFinal/* public
+  artifacts:
+    paths:
+      - public
+

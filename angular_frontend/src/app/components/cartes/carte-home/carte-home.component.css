@@ -1,0 +1,21 @@
+.map-container {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    right: 100px;
+    bottom: 100px;
+    margin: 30px;
+  }
+  
+  .map-frame {
+    border: 3px solid;
+    height: 100%;
+  }
+  
+  #map {
+    height: 100%;
+  }
+  /* background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(124, 181, 255)); */
+  /* small {
+    background: -webkit-linear-gradient(rgb(255, 255, 255), rgb(181, 247, 175));
+  } */

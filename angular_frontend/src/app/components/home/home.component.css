@@ -1,0 +1,15 @@
+ .jumbotron {
+  background-image: 
+   url(../../../assets/img/homepage.jpg);
+  background-size: cover;
+  min-height: 100%;
+ }
+ 
+ h2 {
+     font-family: initial;
+ }
+
+ .lead{
+    color: black;
+    font-weight: bold;
+ }

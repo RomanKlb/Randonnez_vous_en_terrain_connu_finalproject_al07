@@ -1,0 +1,15 @@
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">temp mini</th>
+                <th scope="col">temps maxi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let d of listData; let i = index">
+                <th scope="row">{{d.main.temp_max}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>

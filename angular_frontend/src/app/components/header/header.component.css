@@ -1,0 +1,10 @@
+/* li {
+    font-family: cursive;
+} */
+
+a {
+    color: #5798d4;
+    text-shadow: 2px 2px 4px #cccccc;
+    text-decoration: overline;
+    font-weight: bold;
+}

@@ -1,0 +1,41 @@
+<div class=row>
+  <div class="map-container">
+    <div class="col-md-12 text-center">
+      <h1>
+        Carte météo
+      </h1>
+    </div>
+    <br/><br/>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-2 text-center" style="color: black; font-weight: bold; font-size: larger;">Légende : </div>
+      <div class="col-md-1 " style="color: blue; font-weight: bold; font-size: larger;">
+        <fa-icon [icon]="['fas', 'temperature-low']" size="1x" style="color: blue;"></fa-icon> < 0°C
+      </div>
+      <div class="col-md-1 " style="color: dodgerblue; font-weight: bold; font-size: larger;">
+        <fa-icon [icon]="['fas', 'thermometer-empty']" size="1x" style="color: dodgerblue;"></fa-icon> < 5°C
+      </div>
+      <div class="col-md-1 " style="color: deepskyblue; font-weight: bold; font-size: larger;">
+        <fa-icon [icon]="['fas', 'thermometer-quarter']" size="1x" style="color: deepskyblue;"></fa-icon> < 10°C
+      </div>
+      <div class="col-md-1 " style="color: goldenrod; font-weight: bold; font-size: larger;">
+        <fa-icon [icon]="['fas', 'thermometer-half']" size="1x" style="color: goldenrod;"></fa-icon> < 15°C
+      </div>
+      <div class="col-md-1 " style="color: orange; font-weight: bold; font-size: larger;">
+        <fa-icon [icon]="['fas', 'thermometer-three-quarters']" size="1x" style="color: orange;"></fa-icon> < 20°C
+      </div>
+      <div class="col-md-1 " style="color: crimson; font-weight: bold; font-size: larger;">
+        <fa-icon [icon]="['fas', 'thermometer-full']" size="1x" style="color: crimson;"></fa-icon> < 30°C
+      </div>
+      <div class="col-md-2 " style="color: red; font-weight: bold; font-size: larger;">
+        <fa-icon [icon]="['fas', 'temperature-high']" size="1x" style="color: red;"></fa-icon> > 30°C
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <br/>
+    <div class="row"></div>
+    <div class="map-frame">
+      <div id="map"></div>
+    </div>
+  </div>
+</div>

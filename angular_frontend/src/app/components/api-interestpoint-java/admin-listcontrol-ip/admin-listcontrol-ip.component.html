@@ -1,0 +1,62 @@
+<br />
+<br />
+<br />
+<legend class="text-center">Liste des points d'intérêts de l'application</legend>
+<div class="text-center">
+    <button class="badge badge-secondary" (click)="addAnIP()">
+        Ajouter un point d'intérêt
+    </button>
+</div>
+
+<br />
+<hr />
+<br />
+
+<div class="container">
+    <div class="list row">
+        <div class="col-md-6">
+            <!-- <h4></h4> -->
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let ip of interestpoints; let i = index" [class.active]="i == currentIndex"
+                    (click)="setActiveIP(ip, i)">
+                    {{ ip.nomDuLieu }}
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <div *ngIf="!currentIP">
+                <br/>
+                <br/>
+                <p>Cliquer sur un point d'intérêt de cette liste ...</p>
+            </div>
+            <div *ngIf="currentIP">
+                <!-- <h4>Administrateur</h4> -->
+                <div>
+                    <label><strong>Lieu :</strong></label> {{ currentIP.nomDuLieu }}
+                </div>
+                <div>
+                    <label><strong>Latitude :</strong></label>
+                    {{ currentIP.locationGeographical.latitude }}
+                </div>
+                <div>
+                    <label><strong>Longitude :</strong></label>
+                    {{ currentIP.locationGeographical.longitude }}
+                </div>
+                <!-- <div>
+                    <a class="badge badge-warning" routerLink="/users/{{ currentUser.id }}">
+                        Modifier un Administrateur
+                    </a>
+                </div> -->
+
+                <div>
+                    <a class="badge badge-danger" (click)="removeOneActiveIP()">
+                        Supprimer un InterestPoint
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
