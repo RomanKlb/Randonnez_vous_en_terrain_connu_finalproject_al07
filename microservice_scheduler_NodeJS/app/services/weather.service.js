@@ -16,7 +16,7 @@ async function postWeatherInDB() {
 
 function DataProcessing(lat, lon, date) {
 
-    fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=ae741a64456a183b1692422d804fd5fd&units=metric&lang=fr')
+    fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=VOTRE_API_ID&units=metric&lang=fr')
         .then(res => res.json())
         .then(res => _insertWeather(res));
 

@@ -1,2 +1,0 @@
-# projetfinal_isika_al07_schedulerMeteoAPI_Nodejs
-scheduler meteoAPI
